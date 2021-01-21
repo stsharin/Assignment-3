@@ -1,36 +1,23 @@
 // https://github.com/stsharin/Assignment-3
 
-// Finding kilometer to meter --------------------------
+// Finding kilometer to meter
 function kilometerToMeter(km) {
     if (km < 0) {
-        return -1;
+        return "Distance cannot be negative.";
     }
     else {
         var meter = (km * 1000);   // 1 km = 1000 meter
         return meter;
     }
 }
-
 var toMeter = kilometerToMeter(197);
-if (toMeter == (-1)) {
-    console.log("Distance cannot be negative.");
-}
-else {
-    console.log("Kilometer to Meter:", toMeter);
-}
+// console.log(toMeter);
 
-// Budget Calculator -------------------------------------------------
+// Budget Calculator
 function budgetCalculator(watchAmount, phoneAmount, laptopAmount) {
-    if (watchAmount < 0) {
-        return -1; // to check if the watch amount is negative
+    if (watchAmount < 0 || phoneAmount <0 || laptopAmount<0) {
+        return "Amount cannot be negative. Please give proper value to see the total price."
     }
-    else if (phoneAmount < 0) {
-        return -2; // to check if the phone amount is negative
-    }
-    else if (laptopAmount < 0) {
-        return -3; // to check if the laptop amount is negative
-    }
-
     else {
         // given prices
         var watchPrice = 50;
@@ -46,29 +33,28 @@ function budgetCalculator(watchAmount, phoneAmount, laptopAmount) {
     }
 }
 var price = budgetCalculator(2, 2, 2);
+// console.log(totalPrice);
 
-if (price == -1) {
-    console.log("Watch amount cannot be negative. Please give proper value to see the total price.")
+// Finding hotel cost
+var cost = 0;
+function hotelCost(days) {
+    if (days<=10){
+        cost = days*100;
+    }
+    else if (days>=11 && days<=20){
+        d = days-10;
+        cost = (d*80) + 1000;
+    }
+    else{
+        d = days - 20;
+        cost = (d*50) + 1800;
+    }
+    return cost;
 }
-else if (price == -2) {
-    console.log("Phone amount cannot be negative. Please give proper value to see the total price.")
-}
-else if (price == -3) {
-    console.log("Laptop amount cannot be negative. Please give proper value to see the total price.")
-}
-else {
-    console.log(price);
-}
+var totalCost = hotelCost(11);
+// console.log(totalCost);
 
-// Finding hotel cost ----------------------------------
-// 1-10 din vara 100
-// 11-20 din 80 taka
-// else 50 taka
-
-function hotelCost() {
-
-}
-
+// Finding biggest string
 function megaFriend() {
 
 }
